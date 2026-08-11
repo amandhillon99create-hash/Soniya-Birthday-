@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,700&display=swap');
+
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle,#444,#000);
+
+    font-family:'Lato',sans-serif;
+
+}
+
+
+/* Stars */
+
+.star{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:25px;
+
+    animation:float 5s infinite ease-in-out;
+
+}
+
+
+@keyframes float{
+
+    50%{
+
+        transform:translateY(-70px);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* Main */
+
+.container{
+
+    text-align:center;
+
+    color:white;
+
+    z-index:5;
+
+}
+
+
+/* Cake */
+
+.cake{
+
+    position:relative;
+
+    width:200px;
+
+    height:150px;
+
+    margin:auto;
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    animation:cakeShow 1s forwards;
+
+}
+
+
+@keyframes cakeShow{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+.layer{
+
+    position:absolute;
+
+    width:100%;
+
+    left:0;
+
+    border-radius:15px;
+
+}
+
+
+
+.bottom{
+
+    height:50px;
+
+    bottom:0;
+
+    background:#8b6a60;
+
+}
+
+
+
+.middle{
+
+    height:45px;
+
+    bottom:45px;
+
+    background:#d8a48f;
+
+}
+
+
+
+.top{
+
+    height:35px;
+
+    bottom:85px;
+
+    background:#fff3d6;
+
+}
+/* Candle */
+
+.candle{
+
+    position:absolute;
+
+    width:12px;
+
+    height:45px;
+
+    background:white;
+
+    border-radius:5px;
+
+    top:-45px;
+
+    left:94px;
+
+
+    transform:translateY(-150px);
+
+
+    animation:candleDrop .8s forwards;
+
+    animation-delay:1.2s;
+
+}
+
+
+
+@keyframes candleDrop{
+
+    to{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* Flame */
+
+.flame{
+
+    position:absolute;
+
+    width:18px;
+
+    height:28px;
+
+    top:-28px;
+
+    left:-3px;
+
+
+    background:
+    linear-gradient(#fff,#ffb000,#ff3300);
+
+
+    border-radius:50%;
+
+
+    opacity:0;
+
+    transform:scale(0);
+
+
+    filter:drop-shadow(0 0 15px orange);
+
+
+    animation:
+
+    lightFire .5s forwards,
+
+    flicker .4s infinite alternate;
+
+
+    animation-delay:2s,2.5s;
+
+}
+
+
+
+@keyframes lightFire{
+
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(0);
+
+    }
+
+
+    70%{
+
+        opacity:1;
+
+        transform:scale(1.4);
+
+    }
+
+
+    100%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+@keyframes flicker{
+
+
+    from{
+
+        transform:rotate(-8deg) scale(1);
+
+    }
+
+
+    to{
+
+        transform:rotate(8deg) scale(.85);
+
+    }
+
+}
+
+
+
+/* Fireworks */
+
+#fireworks{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:999;
+}
+
+
+
+.firework{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    opacity:0;
+
+}
+h1{
+
+    margin-top:45px;
+
+    font-size:2rem;
+
+}
+
+
+
+.name{
+
+    font-size:1.5rem;
+
+    color:#ffd6e0;
+
+}
+
+
+
+.message{
+
+    max-width:350px;
+
+    margin:auto;
+
+    opacity:.85;
+
+}
+
+
+
+.creator{
+
+    margin-top:25px;
+
+    font-size:.9rem;
+
+    color:#aaa;
+
+    font-style:italic;
+
+    letter-spacing:1px;
+
+}
+
+
+.smoke{
+    position:absolute;
+    left:50%;
+    top:-12px;
+    width:8px;
+    height:8px;
+    background:rgba(220,220,220,.8);
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(3px);
+    transform:translateX(-50%);
+    animation:smokeRise linear forwards;
+}
+
+@keyframes smokeRise{
+
+    0%{
+        opacity:.9;
+        transform:translate(-50%,0) scale(.8);
+    }
+
+    25%{
+        transform:translate(calc(-50% - 8px),-18px) scale(1.3);
+    }
+
+    50%{
+        transform:translate(calc(-50% + 10px),-40px) scale(1.8);
+        opacity:.6;
+    }
+
+    75%{
+        transform:translate(calc(-50% - 6px),-65px) scale(2.4);
+        opacity:.3;
+    }
+
+    100%{
+        transform:translate(calc(-50% + 5px),-90px) scale(3);
+        opacity:0;
+    }
+
+}
+@media(max-width:500px){
+
+    h1{
+
+        font-size:1.5rem;
+
+    }
+
+
+    .cake{
+
+        transform:scale(.85);
+
+    }
+
+}
+
+#turnPageBtn{
+    display:none;
+    margin-top:25px;
+    font-size:22px;
+    color:#ffd369;
+    cursor:pointer;
+    text-align:center;
+    animation:pulse 1.2s infinite;
+    user-select:none;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+        opacity:1;
+    }
+    50%{
+        transform:scale(1.08);
+        opacity:.6;
+    }
+}
+/* ===== PAGE FLIP ===== */
+
+.book{
+    position:relative;
+    width:100%;
+    height:100vh;
+    perspective:2200px;
+    overflow:hidden;
+}
+
+.page{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    transform-style:preserve-3d;
+    transition:transform 1.6s cubic-bezier(.22,.61,.36,1);
+    backface-visibility:hidden;
+}
+
+.front{
+    background:#000;
+    transform-origin:left center;
+    z-index:5;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 0 0 rgba(0,0,0,0);
+    position: relative;
+overflow: hidden;
+}
+
+.back{
+    background:#000;
+    transform:rotateY(180deg);
+    color:#5a4033;
+    overflow:hidden;
+    padding:0;
+}
+
+.book.flip .front{
+    transform:rotateY(-180deg);
+    box-shadow:-50px 0 100px rgba(0,0,0,.55);
+}
+
+.book.flip .back{
+    transform:rotateY(0deg);
+}
+
+/* Shadow while page turns */
+
+.front::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    right:-3px;
+
+    width:6px;
+
+    height:100%;
+
+    background:linear-gradient(
+        to right,
+        #f8f2df,
+        #d8d0bf,
+        #f8f2df
+    );
+
+    transform-origin:right;
+
+    transition:all 1.6s ease;
+
+}
+
+.book.flip .front::after{
+
+    right:-1px;
+
+    filter:brightness(1.15);
+
+}
+/* Paper curl */
+
+.front::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:-60px;
+
+    top:0;
+
+    width:120px;
+
+    height:100%;
+
+    background:linear-gradient(
+        to left,
+        rgba(255,255,255,.28),
+        rgba(255,255,255,0)
+    );
+
+    transform:skewX(-10deg);
+
+    opacity:0;
+
+    transition:all 1.6s ease;
+
+}
+
+.book.flip .front::before{
+
+    opacity:1;
+
+    right:-10px;
+
+}
+/* ===== Letter Page ===== */
+
+.letter-page{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f7f1e3;
+}
+
+#paper{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#paper h2{
+    color:#5a3d2b;
+    font-size:32px;
+    margin-bottom:25px;
+    font-family:cursive;
+}
+
+#paper p{
+    color:#4a4038;
+    font-size:22px;
+    line-height:1.8;
+    margin:18px 0;
+}
+
+#letterImage{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+#greeting,
+#line1,
+#line2,
+#line3,
+#signature{
+    position:absolute;
+    left:15%;
+    right:15%;
+    color:#3d2b1f;
+    text-align:center;
+}
+
+#greeting{
+    top:18%;
+    font-size:32px;
+}
+
+#line1{
+    top:30%;
+}
+
+#line2{
+    top:42%;
+}
+
+#line3{
+    top:54%;
+}
+
+#signature{
+    bottom:15%;
+}
+@keyframes floatLetter{
+
+    0%{
+        transform:translateY(0px) rotate(0deg);
+    }
+
+    25%{
+        transform:translateY(-6px) rotate(0.5deg);
+    }
+
+    50%{
+        transform:translateY(-10px) rotate(0deg);
+    }
+
+    75%{
+        transform:translateY(-6px) rotate(-0.5deg);
+    }
+
+    100%{
+        transform:translateY(0px) rotate(0deg);
+    }
+
+}
+@keyframes floatPaper{
+
+    0%{
+        transform:translateY(0px) rotate(0deg);
+    }
+
+    25%{
+        transform:translateY(-4px) rotate(0.3deg);
+    }
+
+    50%{
+        transform:translateY(-8px) rotate(0deg);
+    }
+
+    75%{
+        transform:translateY(-4px) rotate(-0.3deg);
+    }
+
+    100%{
+        transform:translateY(0px) rotate(0deg);
+    }
+
+}
+#credit{
+    position:absolute;
+    bottom:8%;
+    left:0;
+    width:100%;
+    text-align:center;
+    font-size:18px;
+    color:#b8860b;
+    opacity:0;
+    transition:opacity 1.5s;
+    font-style:italic;
+}
+</style>
+
+</head>
+
+
+<body>
+  <div class="book" id="book">
+
+<div class="page front" id="frontPage">
+
+
+<div class="star" style="left:10%;top:20%">✨</div>
+
+<div class="star" style="left:80%;top:30%">✨</div>
+
+<div class="star" style="left:50%;top:10%">✨</div>
+
+
+
+<div class="container">
+
+
+<div class="cake">
+
+
+<div class="layer bottom"></div>
+
+<div class="layer middle"></div>
+
+<div class="layer top"></div>
+
+
+<div class="candle">
+    <div class="flame" id="flame"></div>
+</div>
+
+
+
+</div>
+
+
+
+<canvas id="fireworks"></canvas>
+
+
+
+<h1>
+Happy Birthday 🎂
+</h1>
+
+
+<p class="name">
+Kiran Malhan 
+</p>
+
+<p class="message" id="typing"></p>
+
+
+<p class="creator">
+
+Crafted by Aman Dhillon ✦
+
+</p>
+
+
+</div>
+
+
+
+
+<script>
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+let particles = [];
+
+function firework() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height * 0.6;
+
+    for (let i = 0; i < 80; i++) {
+        particles.push({
+            x,
+            y,
+            dx: (Math.random() - 0.5) * 10,
+            dy: (Math.random() - 0.5) * 10,
+            life: 100,
+            color: `hsl(${Math.random() * 360},100%,60%)`
+        });
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+
+        p.x += p.dx;
+        p.y += p.dy;
+        p.dy += 0.03;
+        p.life--;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+
+        if (p.life <= 0) {
+            particles.splice(i, 1);
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+setTimeout(() => {
+    const interval = setInterval(firework, 250);
+
+    setTimeout(() => {
+        clearInterval(interval);
+    }, 4000);
+}, 2000);
+
+const text =
+"Happy Birthday! \n\nI hope you always keep smiling like you do.\n\nI wish you lots of happiness, good health, and many beautiful moments ahead.\n\nMay all the things you wish for slowly come true, and may this year bring you plenty of reasons to smile.\n\nEnjoy your day, make some good memories  and just have a really amazing year.\n\nStay happy, stay the same, and keep smiling. \n\nHappy Birthday once again, Kiran! 🥳";
+const typing = document.getElementById("typing");
+
+function typeWriter() {
+
+    let i = 0;
+
+    typing.textContent = "";
+
+    const timer = setInterval(() => {
+
+        typing.textContent += text.charAt(i);
+
+        i++;
+
+        if (i >= text.length) {
+
+            clearInterval(timer);
+
+            document.getElementById("turnPageBtn").style.display = "block";
+
+        }
+
+    }, 45);
+
+}
+
+/* Start typing after fireworks finish */
+function createSmoke(){
+
+    const candle = document.querySelector(".candle");
+
+    for(let i=0;i<18;i++){
+
+        const smoke = document.createElement("div");
+
+        smoke.className = "smoke";
+
+        smoke.style.left = (Math.random()*12-6)+"px";
+        smoke.style.animationDelay = (i*0.05)+"s";
+        smoke.style.animationDuration = (2+Math.random())+"s";
+
+        candle.appendChild(smoke);
+
+        setTimeout(()=>{
+            smoke.remove();
+        },3000);
+
+    }
+
+}
+
+const flame = document.getElementById("flame");
+
+flame.style.cursor = "pointer";
+
+flame.addEventListener("click", function(){
+
+    // Blow out the flame
+    flame.style.animation = "none";
+    flame.style.opacity = "0";
+    createSmoke();
+
+    // Smoke effect
+
+    // Start typing after blowing candle
+    setTimeout(typeWriter,800);
+
+});
+</script>
+
+</div>
+
+<div class="page back" id="backPage">
+
+<div id="paper">
+
+<img src="letter.png" id="letterImage">
+
+<h2 id="greeting"></h2>
+
+<p id="line1"></p>
+
+<p id="line2"></p>
+
+<p id="line3"></p>
+
+<p id="signature"></p>
+
+<p id="credit"></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+</script>
+</body>
+
+</html>
